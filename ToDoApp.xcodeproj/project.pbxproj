@@ -22,6 +22,7 @@
 		5C73478221419FE700D84D00 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5C73478521419FE700D84D00 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5C73478721419FE700D84D00 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5CED608521437AA700BBBD88 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +39,7 @@
 		5C73476F21419FE600D84D00 = {
 			isa = PBXGroup;
 			children = (
+				5CED608521437AA700BBBD88 /* README.md */,
 				5C73477A21419FE600D84D00 /* ToDoApp */,
 				5C73477921419FE600D84D00 /* Products */,
 			);
