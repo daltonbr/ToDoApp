@@ -19,6 +19,7 @@ class DetailViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         textView.text = text
+        self.navigationItem.largeTitleDisplayMode = .never
     }
     
     override func viewWillAppear(_ animated: Bool) {
