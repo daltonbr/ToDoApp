@@ -11,7 +11,7 @@ import UIKit
 class ViewController: UIViewController, UITableViewDataSource {
     
     @IBOutlet weak var table: UITableView!
-    var data:[String] = ["Item 1", "Item 2", "Item 3"]
+    var data:[String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +22,7 @@ class ViewController: UIViewController, UITableViewDataSource {
         let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNote))
         self.navigationItem.rightBarButtonItem = addButton
         self.navigationItem.leftBarButtonItem = editButtonItem
+        load()
     }
     
     @objc func addNote() {
@@ -32,6 +33,7 @@ class ViewController: UIViewController, UITableViewDataSource {
         data.insert(name, at: 0)
         let indexPath:IndexPath = IndexPath(row: 0, section: 0)
         table.insertRows(at: [indexPath], with: .automatic)
+        save()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -52,8 +54,21 @@ class ViewController: UIViewController, UITableViewDataSource {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         data.remove(at: indexPath.row)
         table.deleteRows(at: [indexPath], with: .fade)
+        save()
     }
 
+    func save() {
+        UserDefaults.standard.set(data, forKey: "notes")
+    }
+    
+    func load() {
+        if let loadedData:[String] = UserDefaults.standard.value(forKey: "notes") as? [String] {
+            data = loadedData
+            table.reloadData()
+        }
+    }
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
