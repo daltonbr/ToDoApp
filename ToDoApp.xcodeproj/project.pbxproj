@@ -12,6 +12,7 @@
 		5C73478121419FE600D84D00 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C73477F21419FE600D84D00 /* Main.storyboard */; };
 		5C73478321419FE700D84D00 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C73478221419FE700D84D00 /* Assets.xcassets */; };
 		5C73478621419FE700D84D00 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C73478421419FE700D84D00 /* LaunchScreen.storyboard */; };
+		5CDCB5582146FDEC00A26677 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDCB5572146FDEB00A26677 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		5C73478221419FE700D84D00 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5C73478521419FE700D84D00 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5C73478721419FE700D84D00 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5CDCB5572146FDEB00A26677 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		5CED608521437AA700BBBD88 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -58,6 +60,7 @@
 			children = (
 				5C73477B21419FE600D84D00 /* AppDelegate.swift */,
 				5C73477D21419FE600D84D00 /* ViewController.swift */,
+				5CDCB5572146FDEB00A26677 /* DetailViewController.swift */,
 				5C73477F21419FE600D84D00 /* Main.storyboard */,
 				5C73478221419FE700D84D00 /* Assets.xcassets */,
 				5C73478421419FE700D84D00 /* LaunchScreen.storyboard */,
@@ -137,6 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5CDCB5582146FDEC00A26677 /* DetailViewController.swift in Sources */,
 				5C73477E21419FE600D84D00 /* ViewController.swift in Sources */,
 				5C73477C21419FE600D84D00 /* AppDelegate.swift in Sources */,
 			);
