@@ -12,6 +12,7 @@ class ViewController: UIViewController, UITableViewDataSource {
     
     @IBOutlet weak var table: UITableView!
     var data:[String] = []
+    var fileURL:URL!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +23,10 @@ class ViewController: UIViewController, UITableViewDataSource {
         let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNote))
         self.navigationItem.rightBarButtonItem = addButton
         self.navigationItem.leftBarButtonItem = editButtonItem
+        
+        let baseURL = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
+        fileURL = baseURL.appendingPathComponent("notes.txt")
+        
         load()
     }
     
@@ -58,11 +63,21 @@ class ViewController: UIViewController, UITableViewDataSource {
     }
 
     func save() {
-        UserDefaults.standard.set(data, forKey: "notes")
+        //UserDefaults.standard.set(data, forKey: "notes")
+        let a = NSArray(array: data)
+        do {
+            try a.write(to: fileURL)
+        } catch {
+            print("ettor writing file")
+        }
     }
     
     func load() {
-        if let loadedData:[String] = UserDefaults.standard.value(forKey: "notes") as? [String] {
+        // Load from UserDefaults
+        //if let loadedData:[String] = UserDefaults.standard.value(forKey: "notes") as? [String] {
+        
+        // Load from a file
+        if let loadedData:[String] = NSArray(contentsOf: fileURL) as? [String] {
             data = loadedData
             table.reloadData()
         }
