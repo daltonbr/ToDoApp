@@ -20,6 +20,11 @@ class DetailViewController: UIViewController {
         // Do any additional setup after loading the view.
         textView.text = text
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        textView.becomeFirstResponder()
+    }
 
     func setText(t: String) {
         text = t
@@ -31,6 +36,7 @@ class DetailViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         masterView.newRowText = textView.text
+        textView.resignFirstResponder()
     }
     
     override func didReceiveMemoryWarning() {
